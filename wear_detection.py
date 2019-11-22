@@ -21,19 +21,19 @@ vs = VideoStream(src=0).start()
 time.sleep(2.0)
 
 while True:
-	frame = vs.read()
-	frame = imutils.resize(frame, width=400)
+        frame = vs.read()
+        frame = imutils.resize(frame, width=400)
 
-	image = cv2.resize(frame, (28, 28))
-	image = image.astype("float") / 255.0
-	image = img_to_array(image)
-	image = np.expand_dims(image, axis=0)
+        image = cv2.resize(frame, (28, 28))
+        image = image.astype("float") / 255.0
+        image = img_to_array(image)
+        image = np.expand_dims(image, axis=0)
 
-	(shirt, t-shirt) = model.predict(image)[0]
-	if t-shirt > shirt:
-	    label = "t-shirt"
-	    proba = t-shirt
-	else:
+        (shirt, tshirt) = model.predict(image)[0]
+        if tshirt > shirt:
+            label = "t-shirt"
+            proba = tshirt
+        else:
             label = "shirt"
             proba = shirt
 
